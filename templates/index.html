@@ -1,0 +1,9 @@
+<script> 
+function sendTimeToServer(){
+    var time = new Date().toISOString();
+    var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    window.location = "/getTime?d=" + document.getElementById("data").value + "&t=" + time + "&tz=" + timezone;
+}
+</script>
+Info: <input id="data">
+<button onclick="sendTimeToServer()">Submit Your Info</button>
